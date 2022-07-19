@@ -18,6 +18,7 @@ model User {
   password     String
   resumes      Resume[]
   refreshToken String?
+  admin        Boolean?
 }
 
 model Resume {

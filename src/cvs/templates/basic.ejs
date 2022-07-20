@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  * {margin: 0; padding: 0; font-family: sans-serif;}
+
+  #body {width: 620px; height: 877px; background-color: #f0f0f0; padding:50px}
+
+  #header, #profissional, #academico, #curso, #deficiencia {margin-bottom: 12px;}
+
+  h1 {margin-bottom: 2px; font-size: 18px;}
+  h3 {font-size: 12px}
+  p {font-size: 12px}
+</style>
+
+<body>
+  <div id="body">
+    <div id="header">
+      <h1><% resume.fullName %></h1>
+      <p>Bairro | Cidade | UF do estado</p>
+      <p>(DDD) telefone | E-mail</p>
+      <p>Data de nascimento | Estado civil</p>
+      <p>LinkedIn (opcional) | Deficiência física (opcional)</p>
+      <p><strong>OBJETIVO:</strong>Escreva qual o seu cargo ou área de interesse</p>
+    </div>
+    
+    <div id="profissional">
+      <h3>EXPERIÊNCIA PROFISSIONAL:</h3>
+      <hr>
+      <p>Cargo/Posição</p>
+      <p>Nome da empresa - início e término</p>
+      <p>Descrição das atividades exercidas</p>
+    </div>
+
+    <div id="academico">
+      <h3>FORMAÇÃO ACADÊMICA:</h3>
+      <hr>
+      <p>Nome da Instituição</p>
+      <p>Início e término</p>
+      <p>Nome do curso e/ou nível acadêmico</p>
+    </div>
+
+    <div id="curso">
+      <h3>CURSOS DE APERFEIÇOAMENTO E ÁREAS DE EXPERIÊNCIA:</h3>
+      <hr>
+      <p>Nome da Instituição</p>
+      <p>Nível de conhecimento</p>
+      <p>Curso</p>
+    </div>
+
+    <div id="deficiencia">
+      <h3>INFORMAÇÕES SOBRE A DEFICIÊNCIA:</h3>
+      <hr>
+      <p>Número de CID:</p>
+      <p>Grau de deficiência:</p>
+      <p>Laudo médico ou certificado INSS (válido ou inválido):</p>
+      <p>Equipamento ou adaptações necessárias:</p>
+      <p>Limitações cotidianas:</p>
+    </div>
+
+  </div>
+</body>
+</html>

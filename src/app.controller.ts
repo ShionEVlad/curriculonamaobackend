@@ -14,6 +14,8 @@ import { AuthService } from './auth/auth.service';
 import { JwtAuthGuard } from './auth/strategies/jwt-auth.guard';
 import { LocalAuthGuard } from './auth/strategies/local-auth.guard';
 import { Permissions } from './auth/strategies/permissions.decorator';
+import { CvsService } from './cvs/cvs.service';
+import { CreateCurriculumDTO } from './dtos/CurriculumDTO';
 import {
   CreateUserDTO,
   DeleteUserDTO,
@@ -28,6 +30,7 @@ export class AppController {
   constructor(
     private readonly authService: AuthService,
     private readonly usersService: UsersService,
+    private readonly cvsService: CvsService,
   ) {}
 
   @UseGuards(LocalAuthGuard)
@@ -48,6 +51,15 @@ export class AppController {
     @Request() req: PayloadUserDTO,
   ): Promise<User> {
     return this.usersService.editUser(editUser, req.user.email);
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Post('/cv')
+  async createCurriculum(
+    @Body() createCurriculum: CreateCurriculumDTO,
+    @Request() req: PayloadUserDTO,
+  ): Promise<User> {
+    return this.cvsService.createCurriculum(createCurriculum, req.user.email);
   }
 
   @Permissions('ADMIN')

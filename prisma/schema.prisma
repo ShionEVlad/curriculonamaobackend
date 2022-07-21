@@ -50,7 +50,6 @@ model Resume {
   limitationDescription  String?
   aditionalInformation   String?
 
-
   professionalExperiences ProfessionalExperiences[]
   schoolEducation         SchoolEducation[]
   aditionalCourses        AditionalCourses[]
@@ -58,38 +57,38 @@ model Resume {
 }
 
 model ProfessionalExperiences {
-  id            Int      @id @default(autoincrement())
+  id            Int       @id @default(autoincrement())
   businessName  String
   position      String
   nowExperience Boolean
   startDate     DateTime
-  endDate       DateTime
+  endDate       DateTime?
   description   String
-  Resume        Resume   @relation(fields: [resumeId], references: [id])
+  Resume        Resume    @relation(fields: [resumeId], references: [id])
   resumeId      Int
 }
 
 model SchoolEducation {
-  id          Int      @id @default(autoincrement())
+  id          Int       @id @default(autoincrement())
   position    String
   schoolName  String
   course      String
   nowCoursing Boolean
   startDate   DateTime
-  endDate     DateTime
-  Resume      Resume   @relation(fields: [resumeId], references: [id])
+  endDate     DateTime?
+  Resume      Resume    @relation(fields: [resumeId], references: [id])
   resumeId    Int
 }
 
 model AditionalCourses {
-  id          Int      @id @default(autoincrement())
+  id          Int       @id @default(autoincrement())
   courseName  String
   schoolName  String
   level       String
   totalTime   String
   nowCoursing Boolean
   startDate   DateTime
-  endDate     DateTime
+  endDate     DateTime?
 
   Resume   Resume @relation(fields: [resumeId], references: [id])
   resumeId Int

@@ -9,7 +9,7 @@ import {
   Request,
   UseGuards,
 } from '@nestjs/common';
-import { User } from '@prisma/client';
+import { Resume, User } from '@prisma/client';
 import { AuthService } from './auth/auth.service';
 import { JwtAuthGuard } from './auth/strategies/jwt-auth.guard';
 import { LocalAuthGuard } from './auth/strategies/local-auth.guard';
@@ -58,7 +58,7 @@ export class AppController {
   async createCurriculum(
     @Body() createCurriculum: CreateCurriculumDTO,
     @Request() req: PayloadUserDTO,
-  ): Promise<User> {
+  ): Promise<Resume> {
     return this.cvsService.createCurriculum(createCurriculum, req.user.email);
   }
 

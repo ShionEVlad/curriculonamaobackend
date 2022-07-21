@@ -7,7 +7,6 @@ import {
 } from '@prisma/client';
 
 export type CreateCurriculumDTO = {
-  theme: 'basic';
   resume: Resume;
   professionalExperiences: ProfessionalExperiences[];
   schoolEducation: SchoolEducation[];
